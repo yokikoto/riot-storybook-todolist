@@ -25,11 +25,13 @@
     "todomvc-common": "^1.0.5"
   },
   "devDependencies": {
-    "@storybook/riot": "^4.0.0-alpha.21",
+    "@babel/core": "^7.0.1",
     "@storybook/addon-actions": "^4.0.0-alpha.21",
     "@storybook/addon-links": "^4.0.0-alpha.21",
     "@storybook/addons": "^4.0.0-alpha.21",
-    "@babel/core": "^7.0.1",
-    "babel-loader": "^8.0.2"
+    "@storybook/riot": "^4.0.0-alpha.21",
+    "babel-loader": "^8.0.2",
+    "riot-hot-reload": "^1.0.0",
+    "riot-tag-loader": "^2.1.0"
   }
 }
