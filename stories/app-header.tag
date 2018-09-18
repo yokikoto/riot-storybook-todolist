@@ -1,4 +1,4 @@
-<header>
+<app-header>
 
   <h1>todos</h1>
   <todo-text-input
@@ -16,4 +16,4 @@
     
   </script>
 
-</header>
+</app-header>

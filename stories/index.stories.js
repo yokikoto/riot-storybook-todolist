@@ -4,11 +4,11 @@ import { linkTo } from '@storybook/addon-links';
 
 /* eslint-disable-next-line import/no-webpack-loader-syntax */
 import MyButtonRaw from 'raw-loader!./MyButton.tag';
-import HeaderRaw from 'raw-loader!./header.tag';
 import './MyButton.tag';
 import './Welcome.tag';
 import './todo-text-input.tag';
-import './header.tag';
+import './app-header.tag';
+import './app-footer.tag';
 
 storiesOf('Welcome', module).add('to Storybook', () =>
   mount('welcome', { showApp: () => linkTo('Button') })
@@ -28,7 +28,18 @@ storiesOf('Button', module)
 
 storiesOf('Header', module)
   // <div class="todoapp">を付与したい
-  .add('default view', () => mount('header', {
+  .add('default view', () => mount('app-header', {
     addTodo: action('Add Todo')
+  }))
+  ;
+
+storiesOf('Footer', module)
+  // <div class="todoapp">を付与したい
+  .add('default view', () => mount('app-footer', {
+    completedCount: 10,
+    activeCount: 4,
+    filter: 'All',
+    onClearCompleted: action('onClearCompleted'),
+    onShow: action('onShow')
   }))
   ;
