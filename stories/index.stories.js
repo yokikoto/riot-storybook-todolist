@@ -1,4 +1,5 @@
 import { mount, storiesOf } from '@storybook/riot';
+import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 /* eslint-disable-next-line import/no-webpack-loader-syntax */
@@ -26,8 +27,8 @@ storiesOf('Button', module)
   }));
 
 storiesOf('Header', module)
-  .add('default view', () => ({
-    tags: [{ content: HeaderRaw, boundAs: 'header' }],
-    template: '<div class="todoapp"><Header></Header></div>',
+  // <div class="todoapp">を付与したい
+  .add('default view', () => mount('header', {
+    addTodo: action('Add Todo')
   }))
   ;
