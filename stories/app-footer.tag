@@ -11,7 +11,7 @@
       </a>
     </li>
     </ul>
-    <button show="{ opts.completedCount > 0 }" className="clear-completed"
+    <button show="{ opts.completedCount > 0 }" class="clear-completed"
         onClick={ opts.onClearCompleted } >
         Clear completed
     </button>
