@@ -1,4 +1,4 @@
-import { mount, storiesOf } from '@storybook/riot';
+import { mount, tag, storiesOf } from '@storybook/riot';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
@@ -26,20 +26,19 @@ storiesOf('Button', module)
     tags: ['<my-button>😀 😎 👍 💯</my-button>'],
   }));
 
+
 storiesOf('Header', module)
-  // <div class="todoapp">を付与したい
-  .add('default view', () => mount('app-header', {
-    addTodo: action('Add Todo')
-  }))
-  ;
+  .add('default view', () =>
+    tag('test', '<div class="todoapp"><app-header add-todo="{ opts.addTodo }"></app-header></div>', '', '', () => { }) &&
+    mount('test', { addTodo: action('Add Todo') })
+  );
 
 storiesOf('Footer', module)
-  // <div class="todoapp">を付与したい
-  .add('default view', () => mount('app-footer', {
-    completedCount: 10,
-    activeCount: 4,
-    filter: 'All',
-    onClearCompleted: action('onClearCompleted'),
-    onShow: action('onShow')
-  }))
+  .add('default view2', () =>
+    tag('test', '<div class="todoapp"><app-footer completed-count="10" active-count="4" filter="All" on-clear-completed="{ onClearCompleted }" on-show="{ onShow }"></app-footer></div>', '', '', () => { }) &&
+    mount('test', {
+      onClearCompleted: action('onClearCompleted'),
+      onShow: action('onShow')
+    })
+  )
   ;
