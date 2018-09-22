@@ -4,14 +4,14 @@
   <todo-text-input
     new-todo="{ true }"
     on-save="{ handleSave }"
-    placeholder="What needs exitto be done?">
+    placeholder="What needs exitto be done?"/>
 
   <script>
 
     this.handleSave = (text) => {
-        if (text.length !== 0) {
-            this.opts.addTodo(text);
-        }
+      if (text.length !== 0) {
+        this.opts.addTodo(text);
+      }
     }
     
   </script>
