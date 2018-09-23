@@ -6,6 +6,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -31,6 +32,7 @@
     "@storybook/addons": "^4.0.0-alpha.21",
     "@storybook/riot": "^4.0.0-alpha.21",
     "babel-loader": "^8.0.2",
+    "express": "^4.16.3",
     "riot-hot-reload": "^1.0.0",
     "riot-tag-loader": "^2.1.0"
   }
