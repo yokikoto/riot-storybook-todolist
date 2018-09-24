@@ -8,7 +8,7 @@
 
     <div hide="{ editing }" class="view">
         <input class="toggle" type="checkbox" checked="{ opts.todo.completed }" onChange="{ completeTodo }">
-        <label onclick={ handleClick }>{ opts.todo.text }</label>
+        <label ondblclick={ handleDblClick }>{ opts.todo.text }</label>
         <button class="destroy" onclick="{ deleteTodo }"></button>
     </div>
   </li>
@@ -33,8 +33,7 @@
         this.opts.completeTodo(this.opts.todo.id);
     }
 
-    // onDoubleClickなんてないので、clickに変更
-    this.handleClick = () => {
+    this.handleDblClick = () => {
         this.editing = true;
     }
 
