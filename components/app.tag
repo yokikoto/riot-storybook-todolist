@@ -7,17 +7,8 @@
 
   <script>
 
-    this.todos = [];
-    this.actions = {
-    }
-
-    this.addTodo = (text) => {
-      todos.push({
-        id : this.todos.length,
-        text: text,
-        completed: false
-      });
-    }
+    const store = this.riotx.get();
+    this.todos = store.getter('todoGetter');
   
   </script>
 
