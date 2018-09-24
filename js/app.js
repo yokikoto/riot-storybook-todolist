@@ -19,7 +19,7 @@ const store = new riotx.Store({
   mutations: {
     todoMutation: (context, data) => {
       context.state.todo.push(data.todo);
-      return ['todoChanged'];
+      return ['changed'];
     }
   },
   getters: {

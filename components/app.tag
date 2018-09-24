@@ -14,7 +14,7 @@
       store.action('addTodo', {text: text});
     }
 
-    store.change('todoChanged', (state, store) => {
+    store.change('changed', (state, store) => {
       this.update({
         todos: state.todo
       })
