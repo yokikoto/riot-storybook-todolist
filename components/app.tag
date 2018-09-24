@@ -27,7 +27,7 @@
 
     store.change('changed', (state, store) => {
       this.update({
-        todos: state.todo
+        todos: JSON.parse(state.todo)
       })
     });
  

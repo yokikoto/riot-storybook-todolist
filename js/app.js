@@ -1,6 +1,6 @@
 const store = new riotx.Store({
   state: {
-    todo: []
+    todo: '[]'
   },
   actions: {
     addTodo: (context, data) => {
@@ -25,18 +25,26 @@ const store = new riotx.Store({
   },
   mutations: {
     todoMutation: (context, data) => {
-      context.state.todo.push(data.todo);
+      const todo = JSON.parse(context.state.todo);
+
+      todo.push(data.todo);
+
+      context.state.todo = JSON.stringify(todo);
       return ['changed'];
     },
     deleteMutation: (context, data) => {
-      const index = context.state.todo.findIndex(item => item.id == data.id);
-      context.state.todo.splice(index, 1);
+      const todo = JSON.parse(context.state.todo);
+
+      const index = todo.findIndex(item => item.id == data.id);
+      todo.splice(index, 1);
+
+      context.state.todo = JSON.stringify(todo);
       return ['changed'];
     }
   },
   getters: {
     todoGetter: (context) => {
-      return context.state.todo
+      return JSON.parse(context.state.todo);
     }
   }
 });
