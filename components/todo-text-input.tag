@@ -1,12 +1,12 @@
 <todo-text-input>
   <input
+    ref="input"
     class="{ edit: opts.editing } { new-todo: opts.newTodo }"
     type="text"
     placeholder="{ opts.placeholder }"
     autoFocus="true"
     value="{ text }"
     onblur="{ handleBlur }"
-    onchange="{ handleChange }"
     onkeydown="{ handleSubmit }">
 
   <script>
@@ -18,13 +18,9 @@
       if (e.which === 13) {
         this.opts.onSave(text)
         if (this.opts.newTodo) {
-          this.text = '';
+          this.refs.input.value = '';
         }
       }
-    }
-
-    this.handleChange = (e) => {
-      this.text = e.target.value;
     }
 
     this.handleBlur = (e) => {
