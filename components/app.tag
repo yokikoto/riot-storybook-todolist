@@ -9,6 +9,17 @@
 
     const store = this.riotx.get();
     this.todos = store.getter('todoGetter');
+    this.actions = {
+      completeTodo: () => {
+      },
+      completeAll: () => {
+      },
+      editTodo: () => {
+      },
+      deleteTodo: (id) => {
+        store.action('deleteTodo', {id: id});
+      }
+    }
  
     this.addTodo = (text) => {
       store.action('addTodo', {text: text});
